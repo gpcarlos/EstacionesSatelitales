@@ -9,13 +9,27 @@ function [X,C,i]=simulatedAnnealing()
     space = randi(N,N,2);
     
     actual=randperm(N,M);
+    actual = [1 2 3 4];
     
     mejor=actual;
     i=0;
     
     while(T>T_limite) && Fvalu(actual,space) ~= 0
-       matrix_aux = distARep(actual,space);
-       pos = min(matrix_aux);
+       m = distARep(actual,space);
+       m = m';
+       
+       j=0;
+       v=0;
+       pos=1;
+       while j<=M
+            posiciones = find(m(:,2) == j);
+            aux=sum(m(posiciones,1));
+            if aux>=v
+                v=aux;
+                pos=j;
+            end    
+            j=j+1;
+       end    
        
        nuevo = sucesorAleatorio(space,actual,pos);
        
