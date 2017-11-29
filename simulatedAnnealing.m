@@ -1,7 +1,7 @@
-function [X,C,i]=simulatedAnnealing(X_)
+function [X,C,i]=simulatedAnnealing()
     
     %temp inicial y limite
-    T=1000;
+    T=10000;
     T_limite=0.1;
     N=50;
     M=4;
@@ -13,12 +13,13 @@ function [X,C,i]=simulatedAnnealing(X_)
     mejor=actual;
     i=0;
     
-    while(T>T_limite) && fevalu(space,actual) ~= 0
-       pos=1;
+    while(T>T_limite) && Fvalu(actual,space) ~= 0
+       matrix_aux = distARep(actual,space);
+       pos = min(matrix_aux);
        
        nuevo = sucesorAleatorio(space,actual,pos);
        
-       deltaE = fevalu(space,actual) - fevalu(space,actual);
+       deltaE = Fvalu(nuevo,space) - Fvalu(actual,space);
        
        if(deltaE<0) %si la solucion es mejor, se coge directamente
            actual=nuevo;
@@ -34,6 +35,6 @@ function [X,C,i]=simulatedAnnealing(X_)
        i=i+1;
     end
     X=mejor;
-    C=fevalu(space,X);
+    C=Fvalu(actual,space);
    
 end
