@@ -8,7 +8,7 @@ function matriz_asignaciones=nueva_asignaciones(space,actual,pos)
     i=1;
     while i<=tam %solo vamos a modificar un elemento de la configuracion
         matriz_asignaciones(i,1) = conjunto_posible(i); %vamos metiendo cada satelite no seleccionado
-        matriz_asignaciones(i,2:end) = setdiff(actual,actual(pos)); %rellenamos con el resto de la configuracion
+        matriz_asignaciones(i,2:end) = setdiff(actual,actual(find(actual==pos))); %rellenamos con el resto de la configuracion
                                                                     %que se queda estatico
         i=i+1;
     end

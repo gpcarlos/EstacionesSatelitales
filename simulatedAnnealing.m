@@ -1,37 +1,34 @@
 function [X,C,i]=simulatedAnnealing()
     
     %temp inicial y limite
-    T=10000;
+    T=1000000;
     T_limite=0.1;
-    N=50;
-    M=4;
-    rand('seed',5);
+    N=500;
+    M=40;
+    %rand('seed',50);
     space = randi(N,N,2);
     
-    actual=randperm(N,M);
-    actual = [1 2 3 4];
+    actual=randperm(N,M)
     
     mejor=actual;
     i=0;
     
     while(T>T_limite) && Fvalu(actual,space) ~= 0
        m = distARep(actual,space);
-       m = m';
+       [min_,rep]=min(m');
+       minYpos=[min_; rep];
+       minYpos=minYpos';
        
-       j=0;
-       v=0;
-       pos=1;
-       while j<=M
-            posiciones = find(m(:,2) == j);
-            aux=sum(m(posiciones,1));
-            if aux>=v
-                v=aux;
-                pos=j;
-            end    
-            j=j+1;
-       end    
+       j=1; sumas=[];
+       while j~=M+1
+           pos=find(minYpos(:,2)==j);
+           sumas=[sumas; sum(minYpos(pos(:),1))];
+           j=j+1;
+       end
        
-       nuevo = sucesorAleatorio(space,actual,pos);
+       [~,posRep]=min(sumas);
+       Representante=actual(posRep);
+       nuevo = sucesorAleatorio(space,actual,Representante);
        
        deltaE = Fvalu(nuevo,space) - Fvalu(actual,space);
        
