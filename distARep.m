@@ -1,3 +1,6 @@
+% Devuelve las distancias entre un de todos los satélistes
+% a todas los satélites representantes
+
 function dist=distARep(Repcurrent, space)
     m=1:size(space,1); % Total de satelites
     [~,pos]=find(m==Repcurrent(:));

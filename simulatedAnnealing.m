@@ -1,22 +1,18 @@
-function [X,C,i]=simulatedAnnealing()
+function [X,C,i]=simulatedAnnealing(N,M,space)
     
     %temp inicial y limite
     T=1000000;
     T_limite=0.1;
-    N=500;
-    M=40;
-    %rand('seed',50);
-    space = randi(N,N,2);
     
-    actual=randperm(N,M)
+    actual=randperm(N,M) % Actual grupo de representantes
     
     mejor=actual;
     i=0;
     
-    while(T>T_limite) && Fvalu(actual,space) ~= 0
+    while (T>T_limite) && Fvalu(actual,space) ~= 0
        m = distARep(actual,space);
-       [min_,rep]=min(m');
-       minYpos=[min_; rep];
+       [min_,rep_]=min(m');
+       minYpos=[min_; rep_];
        minYpos=minYpos';
        
        j=1; sumas=[];
@@ -24,10 +20,11 @@ function [X,C,i]=simulatedAnnealing()
            pos=find(minYpos(:,2)==j);
            sumas=[sumas; sum(minYpos(pos(:),1))];
            j=j+1;
-       end
+       end % Calculamos la suma de todas las distancias mínimas a cada representante
        
        [~,posRep]=min(sumas);
        Representante=actual(posRep);
+       % Elegimos el representante con menor distancias
        nuevo = sucesorAleatorio(space,actual,Representante);
        
        deltaE = Fvalu(nuevo,space) - Fvalu(actual,space);
