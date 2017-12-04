@@ -9,7 +9,7 @@ function [X,C,i]=simulatedAnnealing(N,M,space)
     mejor=actual;
     i=0;
     
-    while (T>T_limite) && Fvalu(actual,space) ~= 0
+    while (T>T_limite)
        m = distARep(actual,space);
        [min_,rep_]=min(m');
        minYpos=[min_; rep_];
