@@ -1,7 +1,7 @@
 function [Pob,FitPob]=Genetic(Pob, FitPob, N, space)
-    MAX_itera=3000;
-    Pcross=0.9; % Probabilidades
-    Pmut=0.1;
+    MAX_itera=5000;
+    Pcross=0.7; % Probabilidades
+    Pmut=0.2;
     
     itera=1;
     while itera<=MAX_itera % <Resto de condiciones de parada>
