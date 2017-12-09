@@ -1,0 +1,47 @@
+clear all; close all;
+
+N=500; % Numero de satelites
+M=40; % Número de representantes
+rand('seed',5);
+
+coordinatesO = randi(N,N,2); % Coordenadas de los satélites en el espacio
+T=[1000 1000000];
+T_limite=[0.1 0.01];
+pcool=[0.9 0.98];
+
+CMejor=inf; Mejor=[];
+itera=1;
+for temp=T
+   for templ=T_limite
+       for enf=pcool
+           coordinates=coordinatesO;
+           tic
+           [X,C] = simulatedAnnealing(N,M,coordinates,temp,templ,enf);
+           tiempo=toc;
+           if C<CMejor
+                CMejor=C;
+                Mejor=X;
+            end
+            resultados{itera,1}=temp; resultados{itera,2}=templ;
+            resultados{itera,3}=enf; resultados{itera,4}=C;
+            resultados{itera,5}=tiempo;
+            itera=itera+1;
+       end
+   end
+end
+
+figure;
+plot(coordinates(:,1),coordinates(:,2),'.'); hold on;
+plot(coordinates(Mejor,1),coordinates(Mejor,2),'*'); hold on;
+legend('Satélites', 'Representantes')
+
+figure;
+[~,pos_]=sort([resultados{:,4}],'descend');
+info=[[resultados{pos_,1}]' [resultados{pos_,2}]' [resultados{pos_,3}]' [resultados{pos_,5}]' [resultados{pos_,4}]'/1.0e+04];
+h=[];
+for i=1:8
+   scatter(info(i,4),info(i,5),'filled'); hold on;
+   h=[h 'Temp:'+string(info(i,1))+'  Tlim:'+string(info(i,2))+'  Enf:'+string(info(i,3))]; hold on;
+end
+grid on
+legend(h); ylabel('Valor Representantes/1.0e+04'); xlabel('Tiempo en segundos')

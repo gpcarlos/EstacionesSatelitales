@@ -1,15 +1,17 @@
 clear all; close all;
 
-N=500; % Numero de satelites
+N=500; % Número de satelites
 M=40; % Número de representantes
 rand('seed',5);
 
-coordenadas = randi(N,N,2); % coordenadas de los satélites en el espacio
-T=1000;
-T_limite=0.01;
-tic
-[X,C,i] = simulatedAnnealing(N,M,coordenadas,T,T_limite)
-toc
+coordinates = randi(N,N,2); % Coordenadas de los satélites en el espacio
+T=1000000;
+T_limit=0.01;
+pcool=0.98;
 
-plot(coordenadas(:,1),coordenadas(:,2),'.'); hold on;
-plot(coordenadas(X,1),coordenadas(X,2),'*');
+tic
+[X,C] = simulatedAnnealing(N,M,coordinates,T,T_limit,pcool)
+time=toc
+
+plot(coordinates(:,1),coordinates(:,2),'.'); hold on;
+plot(coordinates(X,1),coordinates(X,2),'*');

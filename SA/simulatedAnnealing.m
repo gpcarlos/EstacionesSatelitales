@@ -1,13 +1,12 @@
-function [best,value,itera] = simulatedAnnealing(N,M,coordinates,T,T_limite)
+function [best,value] = simulatedAnnealing(N,M,coordinates,T,T_limit,pcool)
     % T: Temperatura inicial
-    % T_limite: Temperatura minima
+    % T_limit: Temperatura minima
 
-    current=randperm(N,M) % Representantes iniciales
+    current=randperm(N,M); % Representantes iniciales
 
     best=current; % La mejor es la inicial
 
-    itera=0;
-    while (T>T_limite)
+    while (T>T_limit)
 
        RepToChange=current(randi(M));
        % Elegimos un representante aleatorio a cambiar
@@ -25,8 +24,7 @@ function [best,value,itera] = simulatedAnnealing(N,M,coordinates,T,T_limite)
            end
        end
 
-       T=cool(T);
-       itera=itera+1;
+       T=cool(T,pcool);
     end
 
     value=Fvalue(current,coordinates);
