@@ -26,7 +26,7 @@ for temp=T
            end
            results{itera,1}=temp; results{itera,2}=templ;
            results{itera,3}=enf; results{itera,4}=C;
-           results{itera,5}=time;
+           results{itera,5}=time; results{itera,6}=itera;
            itera=itera+1;
        end
    end
@@ -39,12 +39,17 @@ legend('Satélites', 'Representantes')
     
 figure;
 [~,pos_]=sort([results{:,4}],'descend');
-info=[[results{pos_,1}]' [results{pos_,2}]' [results{pos_,3}]' [results{pos_,5}]' [results{pos_,4}]'/1.0e+04];
+info=[[results{pos_,1}]' [results{pos_,2}]' [results{pos_,3}]' [results{pos_,5}]' [results{pos_,4}]'/1.0e+04 [results{pos_,6}]'];
 h=[];
-for i=1:8
+for i=1:size(results,1)
    scatter(info(i,4),info(i,5),'filled'); hold on;
-   h=[h 'Valor:'+string(info(i,5))+'  Temp:'+string(info(i,1))+'  Tlim:'+string(info(i,2))+'  Enf:'+string(info(i,3))]; hold on;
+   h=[h string(info(i,6))+' Valor:'+string(info(i,5))+'  Temp:'+string(info(i,1))+'  Tlim:'+string(info(i,2))+'  Enf:'+string(info(i,3))]; hold on;
 end
 grid on
+
+
+labels = num2str([results{pos_,6}]','%d');  
+text(double(info(:,4)), double(info(:,5)), labels, 'horizontal','left', 'vertical','bottom'); hold on;
+
 
 legend(h); ylabel('Valor/1.0e+04'); xlabel('Tiempo en segundos')
