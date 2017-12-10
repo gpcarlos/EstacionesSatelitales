@@ -1,0 +1,16 @@
+# LaTeX
+*.aux
+*.lfs
+*.pyg
+*.synctex.pyg
+*.synctex.gz
+*.toc
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.snm
+*.nav
+*.dvi
+*.vrb
+_minted-presentation
