@@ -1,4 +1,7 @@
-function offsGlobal=OXcrossover(couples,Pop,type)
+% Devuelve la los nuevos individudos a partir de los cruces
+% entre los padres
+
+function offsGlobal=crossover(couples,Pop,type)
 % p: two parents to cross
 % f1 & f2: crossover points
 % offs: two offsprings

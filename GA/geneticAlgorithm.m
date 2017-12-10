@@ -6,7 +6,7 @@ function [Pop,FitPop] = geneticAlgorithm(Pop, FitPop, coordinates, MAX_itera, Pc
         % RouletteWheel or Tournament
         parents = selection(FitPop,sel); % Selecciona los padres
 
-        couples = match(parents,Pcross,itera); % Empareja los padres
+        couples = match(parents,Pcross); % Empareja los padres
 
         if ~isempty(couples)
             % OX or PMX

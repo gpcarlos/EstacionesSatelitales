@@ -1,12 +1,14 @@
+% Devuelve la lista de padres
+
 function parents=selection(FitPop,type)
 
     switch type
     case 'RouletteWheel'
         Prob=FitPop/sum(FitPop);
         SumProb=cumsum(Prob);
-        i=1; parents=[];
+        i=0; parents=[];
         randoms=rand(length(FitPop),1);
-        while i~=length(FitPop)+1
+        while i~=length(FitPop)
             sup=find(randoms(i)<SumProb);
             sup=min(sup);
             parents = [parents ; sup];

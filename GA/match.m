@@ -1,6 +1,6 @@
 % Devuelve las parejas de padres que se cruzarán
 
-function couples = match(parents,Pcross,itera)
+function couples = match(parents,Pcross)
 
     cp=find(rand(size(parents,1),1)< Pcross);
     parents=parents(cp); % Busca padres en puntos aleatorios
