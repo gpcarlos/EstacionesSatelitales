@@ -56,11 +56,11 @@ legend('Satélites', 'Representantes')
     
 figure;
 [~,pos_]=sort([results{:,8}],'descend');
-info=[[results{pos_,1}]' [results{pos_,2}]' [results{pos_,3}]' [results{pos_,4}]' [results{pos_,5}]' [results{pos_,6}]' [results{pos_,7}]' [results{pos_,9}]' [results{pos_,8}]'/1.0e+04 [results{pos_,3}]' [results{pos_,4}]' [results{pos_,10}]'];
+info=[[results{pos_,1}]' [results{pos_,2}]' [results{pos_,3}]' [results{pos_,4}]' [results{pos_,5}]' [results{pos_,6}]' [results{pos_,7}]' [results{pos_,9}]' [results{pos_,8}]'/1.0e+04 [results{pos_,10}]'];
 h=[];
 for i=1:size(results,1)
    scatter(info(i,8),info(i,9),'filled'); hold on;
-   h=[h string(info(i,12))+' Valor:'+string(info(i,9))+'  MAXItera:'+string(info(i,1))+'  NPop:'+string(info(i,2))+'  Pcros:'+string(info(i,10))+'  Pmut:'+string(info(i,11))+'  Sel:'+string(info(i,6))+'  Cross:'+string(info(i,5))+'  Rep:'+string(info(i,7))]; hold on;
+   h=[h string(info(i,10))+' Valor:'+string(info(i,9))+'  MAXItera:'+string(info(i,1))+'  NPop:'+string(info(i,2))+'  Pcros:'+string(info(i,3))+'  Pmut:'+string(info(i,4))+'  Sel:'+string(info(i,6))+'  Cross:'+string(info(i,5))+'  Rep:'+string(info(i,7))]; hold on;
 end
 grid on
 

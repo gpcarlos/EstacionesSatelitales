@@ -1,4 +1,4 @@
-function [Pop,FitPop,itera] = geneticAlgorithm(Pop, FitPop, coordinates, MAX_itera, Pcross, Pmut, cross, sel, rep)
+function [Pop,FitPop] = geneticAlgorithm(Pop, FitPop, coordinates, MAX_itera, Pcross, Pmut, cross, sel, rep)
 
     itera=1;
     while itera<=MAX_itera

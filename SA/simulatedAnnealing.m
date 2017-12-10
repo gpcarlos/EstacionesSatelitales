@@ -1,6 +1,6 @@
 function [best,value] = simulatedAnnealing(N,M,coordinates,T,T_limit,pcool)
     % T: Temperatura inicial
-    % T_limit: Temperatura minima
+    % T_limit: Temperatura mínima
 
     current=randperm(N,M); % Representantes iniciales
 
@@ -15,11 +15,11 @@ function [best,value] = simulatedAnnealing(N,M,coordinates,T,T_limit,pcool)
        % Nuevo conjunto de representantes aleatorio
 
        deltaE = Fvalue(new,coordinates) - Fvalue(current,coordinates);
-       if(deltaE<0) % Si la solucion es mejor, se coge directamente
+       if(deltaE<0) % Si la solución es mejor, se selecciona
            current = new;
            best = current;
        else
-           if(exp(-deltaE/T)>rand(0,1)) % Acepta la solucion de forma aleatoria
+           if(exp(-deltaE/T)>rand(0,1)) % Acepta la solución de forma aleatoria
                current = new;
            end
        end
