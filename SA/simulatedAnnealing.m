@@ -27,5 +27,5 @@ function [best,value] = simulatedAnnealing(N,M,coordinates,T,T_limit,pcool)
        T=cool(T,pcool);
     end
 
-    value=Fvalue(current,coordinates);
+    value=Fvalue(best,coordinates);
 end
