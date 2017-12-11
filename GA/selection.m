@@ -6,9 +6,9 @@ function parents=selection(FitPop,type)
     case 'RouletteWheel'
         Prob=FitPop/sum(FitPop);
         SumProb=cumsum(Prob);
-        i=0; parents=[];
+        i=1; parents=[];
         randoms=rand(length(FitPop),1);
-        while i~=length(FitPop)
+        while i~=length(FitPop)+1
             sup=find(randoms(i)<SumProb);
             sup=min(sup);
             parents = [parents ; sup];
