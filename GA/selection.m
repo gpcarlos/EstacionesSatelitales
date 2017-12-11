@@ -20,7 +20,8 @@ function parents=selection(FitPop,type)
         i=0; parents=[];
         while i~=length(FitPop)
             randoms = randi(length(FitPop),k,1);
-            parents = [parents ; max(randoms)];
+            [~,pos_] = max(FitPop(randoms));
+            parents = [parents ; randoms(pos_)];
             i=i+1;
         end
 
