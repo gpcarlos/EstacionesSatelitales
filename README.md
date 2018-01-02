@@ -10,6 +10,14 @@ establece al inicio del problema. Se pretende encontrar la combinación de estac
 que minimicen la distancia euclídea global de este problema.
 
 
-<img align="left" width="100" height="100" src="/Presentation/images/statsSA.png">
-
 [Presentación](/Presentation/presentation.pdf)
+
+<p align="center">
+  <img width="460" height="300" src="/Presentation/images/mapSA.png">
+  Distribución de las representantes (puntos rojos) usando Simulated Annealing. 
+</p>
+
+<p align="center">
+  <img width="460" height="300" src="/Presentation/images/mapSA.png">
+  Distribución de las representantes (puntos rojos) usando Algoritmo Genético. 
+</p>
