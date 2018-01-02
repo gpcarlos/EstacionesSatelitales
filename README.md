@@ -10,6 +10,6 @@ establece al inicio del problema. Se pretende encontrar la combinación de estac
 que minimicen la distancia euclídea global de este problema.
 
 
-<img align="left" width="100" height="100" src="/Presentation/statsSA.png">
+<img align="left" width="100" height="100" src="/Presentation/images/statsSA.png">
 
 [Presentación](/Presentation/presentation.pdf)
