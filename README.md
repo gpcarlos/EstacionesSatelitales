@@ -12,12 +12,14 @@ que minimicen la distancia euclídea global de este problema.
 
 [Presentación](/Presentation/presentation.pdf)
 
+**Para N=500 y M=40:**
+
+Distribución de las representantes (puntos rojos) usando Simulated Annealing. 
 <p align="center">
-  <img width="460" height="300" src="/Presentation/images/mapSA.png">
-  Distribución de las representantes (puntos rojos) usando Simulated Annealing. 
+  <img width="560" height="400" src="/Presentation/images/mapSA.png">
 </p>
 
+Distribución de las representantes (puntos rojos) usando Algoritmo Genético. 
 <p align="center">
-  <img width="460" height="300" src="/Presentation/images/mapSA.png">
-  Distribución de las representantes (puntos rojos) usando Algoritmo Genético. 
+  <img width="560" height="400" src="/Presentation/images/mapSA.png">
 </p>
