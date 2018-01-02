@@ -1,6 +1,10 @@
 # Estaciones Satelitales
 Trabajo de la asignatura 'Sistemas Inteligentes'. Universidad de Cádiz.
 
+Realizado por:
+- Carlos Gallardo Polanco @gpcarlos95
+- Aarón Arias Pérez @aaronariasperez
+
 **Problema a resolver:**
 En un espacio bidimensional *AxB* se han ubicado *N* posibles estaciones satelitales de las que
 hay que seleccionar *M* estaciones representantes del resto no seleccionado *(N>M): S={R1,R2, ..., RM}.*
