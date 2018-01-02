@@ -21,5 +21,5 @@ Distribución de las representantes (puntos rojos) usando Simulated Annealing.
 
 Distribución de las representantes (puntos rojos) usando Algoritmo Genético. 
 <p align="center">
-  <img width="560" height="400" src="/Presentation/images/mapSA.png">
+  <img width="560" height="400" src="/Presentation/images/mapGA.png">
 </p>
