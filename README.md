@@ -2,8 +2,8 @@
 Trabajo de la asignatura 'Sistemas Inteligentes'. Universidad de Cádiz.
 
 Realizado por:
-- Carlos Gallardo Polanco @gpcarlos95
-- Aarón Arias Pérez @aaronariasperez
+- Carlos Gallardo Polanco [@gpcarlos95](https://github.com/gpcarlos95)
+- Aarón Arias Pérez [@aaronariasperez](https://github.com/aaronariasperez)
 
 **Problema a resolver:**
 En un espacio bidimensional *AxB* se han ubicado *N* posibles estaciones satelitales de las que
